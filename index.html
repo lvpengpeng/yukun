@@ -12,14 +12,14 @@
 	 padding: 0;
 	}
 	 img{
-	  width: 400px;
+	  width: 100%;
 	  height: 300px;
 	  left: 200px;
 	  position: absolute;
 	  z-index: -1;
 	 }
 	 canvas{
-	  margin-left:200px;
+	  /* margin-left:200px; */
 	 }
 	 #canvas{
 		 background-position: center;
@@ -42,8 +42,8 @@
 	context.fillStyle= 'grey'
 	context.fillRect(0,0,400,300);
 	//鼠标按下开刮
-	canvas.onmousedown=function(){
-	 canvas.onmousemove = function(){
+	canvas.touchstart=function(){
+	 canvas.touchmove = function(){
 	  //获取鼠标坐标
 	  var x = event.clientX;
 	  var y = event.clientY;
@@ -55,8 +55,8 @@
 	 }
 	}
 	//鼠标抬起不刮开
-	canvas.onmouseup=function(){
-	 canvas.onmousemove = function(){ 
+	canvas.touchend=function(){
+	 canvas.touchmove = function(){ 
 	 }
 	} 
 	</script>
